@@ -1,0 +1,14 @@
+// Brute force method to do this problem would be to use the set() function for removing the duplicates . 
+
+def removeDuplicates(self, nums):
+        ar = set()
+// set() will not take two values of the same number and will only take every number once.
+        for i in nums:
+            ar.add(i)
+        arr = sorted(ar)
+        for i in range(len(arr)):
+            nums[i] = arr[i]
+        return len(arr)
+
+// We arrange nums into set and the sort it as values in set may not be stored in the same way as we feed them.
+//Then we write a for loop for the set() and then assign those values to the nums array.
