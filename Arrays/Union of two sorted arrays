@@ -1,0 +1,33 @@
+# Here we can take a while loop and keep two pointers i and j . This is the optimal solution . 
+# i will keep track of the nums1 array and j will do that for nums2 array.
+# As both of these are sorted arrays . If nums1[i] value is less then nums2[j] we move i forward and do viceversa in j case .
+
+ def unionArray(self, nums1, nums2):
+        ar = []
+        i = j = 0
+        while i < len(nums1) and j < len(nums2):
+            if nums1[i] < nums2[j]:
+                if not ar or ar[-1] != nums1[i]:
+                    ar.append(nums1[i])
+                i += 1
+            elif nums1[i] > nums2[j]:
+                if not ar or ar[-1] != nums2[j]:
+                    ar.append(nums2[j])
+                j += 1
+            else :
+                if not ar or ar[-1] != nums1[i]:
+                    ar.append(nums1[i])
+                i += 1
+                j += 1
+        while i < len(nums1):
+            if not ar or ar[-1] != nums1[i]:  
+                ar.append(nums1[i])
+            i += 1
+        while j < len(nums2):
+            if not ar or ar[-1] != nums2[j]:
+                ar.append(nums2[j])
+            j += 1
+        return ar
+
+# Here one problem is that no number should repeat in the output even if it appears multiple times in nums1 and nums2 arrays.
+# we wrote the line if not ar or ar[-1]!= nums1[i] because we need to check that no duplicates allowed in the output array
