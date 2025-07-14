@@ -1,0 +1,13 @@
+#So here if we are given an array fill with 0's and 1's and asked to find out the decimal num it makes we can do it using a formula .
+# res = res * 2 + arr[i]
+
+ def getDecimalValue(self, head):
+       
+        if head is None:
+            return None
+        temp = head
+        result = 0
+        for arr in 
+            result = result * 2 + temp.val
+            temp = temp.next
+        return result
