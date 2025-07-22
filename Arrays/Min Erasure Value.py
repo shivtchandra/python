@@ -8,7 +8,7 @@ summ = 0
 maxx = 0
 
 for i in range(len(nums)):
-  if nums[i] in seen:
+  while nums[i] in seen:
 #Here we check if the new number is already present in the seen set and if thats the case , we delete the left most element from the sum and also from the hash set.
 # Now the code will again check for this condition and if it still True then again the left most element will get deleted untill the condition turns into False.
 # We can either reduce the right or left , But we choose to remove left bcos we need to explore the right part of array and it needs to be in a sequence.
